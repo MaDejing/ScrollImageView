@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  ScrollImageViewTest
+//  ScrollImageTest2
 //
-//  Created by DejingMa on 16/9/11.
+//  Created by DejingMa on 16/9/8.
 //  Copyright © 2016年 DejingMa. All rights reserved.
 //
 
@@ -19,7 +19,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
+    }
 
+    @IBAction func showLargeImage(sender: AnyObject) {
+        let sb  = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("LargeImageVC") as! LargeImageVC
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
